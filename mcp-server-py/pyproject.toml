@@ -1,11 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "mcp-server-py"
+name = "shannon-mcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Shannon Pentest MCP Server"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "fastmcp>=2.14.5",
-    "python-dotenv>=1.2.1",
-    "temporalio>=1.22.0",
+    "fastmcp>=2.1.0",
+    "python-dotenv>=1.0.0",
+    "temporalio>=1.7.0",
 ]

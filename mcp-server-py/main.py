@@ -34,7 +34,15 @@ load_dotenv()
 mcp = FastMCP(name="shannon-pentest")
 
 # Project root (shannon/) — one level up from mcp-server-py/
-PROJECT_ROOT = Path(__file__).parent.parent
+# In cloud deployment, this might be the current directory if using a subfolder
+_SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = _SCRIPT_DIR.parent
+
+# Fallback in case we are running in a flat structure on a platform
+if not (PROJECT_ROOT / "repos").exists() and _SCRIPT_DIR.name == "mcp-server-py":
+    # If the parent doesn't have repos, but we are in subfolder, stay here or check local
+    if (_SCRIPT_DIR / "repos").exists():
+        PROJECT_ROOT = _SCRIPT_DIR
 
 
 # ---------------------------------------------------------------------------
