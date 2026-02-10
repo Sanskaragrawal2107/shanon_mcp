@@ -4,13 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "shannon-mcp"
-version = "0.1.0"
-description = "Shannon Pentest MCP Server — Autonomous pentesting tools"
+version = "1.0.0"
+description = "Shannon Zero-Config Pentest MCP Server — Just give a URL, get a pentest report"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "fastmcp>=2.1.0",
     "python-dotenv>=1.0.0",
-    "temporalio>=1.7.0",
     "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.0",
 ]
